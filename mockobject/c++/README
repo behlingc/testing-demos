@@ -1,0 +1,17 @@
+This is a simple demo showing the usage of mock objects for intergation testing in C++.
+
+A carrier software module in a positioning system (e.g. an automatic crane in a habour) has
+to be tested. The carrier depends on thre drive objects (e.g. step motors) for the X, Y and Z positions.
+
+In the test it should be verified, that the drives are contolled properly by the carrier.
+For this reason the drive class is abstracted by an interface, to be able to pass mock
+objects with verification functions of the same type as the real world drives.
+
+The carrier must be designed to support the interface type instead of the real drive type.
+This tecnique is known as design for testability.
+
+In a real world project many mocks are created that serve a test system and simulate
+real behaviour to the callers instead of executing the real functionality.
+A tester can set up many test in parallel to the real software to inspect subsystems
+according to the integration test strategy. 
+
